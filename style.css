@@ -196,6 +196,7 @@
   .navbar ul.show,
   .menu.active + ul {
     display: flex;
+    padding-bottom: 15px;
   }
 
   .navbar ul li {
