@@ -62,10 +62,6 @@
   background-color: #45862b;
 }
 
-.menu-icon {
-    display: none;
-}
-
 .content {
   width: 100%;
   min-height: 100vh;
@@ -105,20 +101,59 @@
   background-color: #3f4f22;
 }
 
+.menu-icon {
+  display: flex;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  top: 10px;
+  right: 10px;
+}
+
+.menu ul {
+  display: none;
+  flex-direction: column;
+  background-color: #013220;
+  padding-bottom: 10px;
+  list-style: none;
+  width: 100%;
+}
+
+.menu ul.show {
+  display: flex;
+}
+
+.menu ul li {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.menu ul li a {
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  background-color: #45862b;
+}
 
 /* Media Query for screens of 600px and below */
 @media screen and (max-width: 600px) {
   .container {
-      position: relative;
+    position: relative;
   }
-  
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
-    background-color: #013220; 
+    background-color: #013220;
     margin: 0;
-    width: 100%; 
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -126,7 +161,7 @@
   }
 
   .navbar h1 {
-    order: 2; 
+    order: 2;
   }
 
   .navbar ul {
@@ -137,20 +172,29 @@
     top: 60%;
     left: 0;
     background-color: #013220;
-    order: 1; 
+    order: 1;
   }
 
-  .navbar .menu-icon {
+  .menu {
     display: block;
     cursor: pointer;
-    color: #fff; 
-    position: absolute;
+    color: #fff;
+    position: fixed;
     top: 10px;
     right: 10px;
+    z-index: 3;
   }
-  
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    z-index: 3;
+  }
+
   .navbar ul.show,
-  .navbar .menu-icon.active + ul {
+  .menu.active + ul {
     display: flex;
   }
 
@@ -161,11 +205,30 @@
 
   .content {
     text-align: center;
+    margin-top: 60px;
+  }
+
+  .navbar ul.show {
+    display: flex;
   }
 }
 
+/* Media Query for screens above 600px */
 @media screen and (min-width: 601px) {
-    .menu-links {
-        display: none;
-    }
+  .menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .navbar ul {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    margin-top: 10px;
+  }
 }
