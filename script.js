@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
     const menuIcon = document.querySelector('.menu-icon');
-    const navbarList = document.querySelector('.navbar ul');
+    const menuLinks = document.querySelector('.navbar ul');
 
     menuIcon.addEventListener('click', function () {
-      navbarList.classList.toggle('show');
-      menuIcon.classList.toggle('active');
+        menuLinks.classList.toggle('show');
+        menuIcon.classList.toggle('active');
     });
-  });
+});
